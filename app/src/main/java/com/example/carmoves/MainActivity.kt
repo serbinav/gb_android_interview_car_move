@@ -2,6 +2,7 @@ package com.example.carmoves
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.carmoves.databinding.ActivityMainStartBinding
 
 //  Напишите приложение, которое:
 //  ● Отображает макет машины как в приложении Я.Гоу или СитиМобил;
@@ -10,8 +11,12 @@ import android.os.Bundle
 //  MVVM или MVP, MVI. Будет плюсом DI (Koin, Dagger, Toothpick). Наличие тестов будет плюсом.
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainStartBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainStartBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 }
